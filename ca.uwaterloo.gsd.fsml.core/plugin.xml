@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.12 2008/02/22 20:05:53 Herman Lee <hlee@gsd.uwaterloo.ca> $
+-->
+
+<plugin>
+    
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://ca.uwaterloo.gsd/sync" 
+       class = "ca.uwaterloo.gsd.fsml.sync.provider.SyncItemProviderAdapterFactory" 
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+    <factory 
+       uri = "http://ca.uwaterloo.gsd/fsml" 
+       class = "ca.uwaterloo.gsd.fsml.fsml.provider.FsmlItemProviderAdapterFactory" 
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://ca.uwaterloo.gsd/sync"
+       class = "ca.uwaterloo.gsd.fsml.sync.SyncPackage"
+       genModel = "model/sync.genmodel" />
+    <package
+          class="ca.uwaterloo.gsd.fsml.fsml.FsmlPackage"
+          genModel="model/fsml.genmodel"
+          uri="http://ca.uwaterloo.gsd/fsml"/> 
+  </extension>
+
+  <extension
+      point="org.eclipse.ui.views">
+   <category
+         id="ca.uwaterloo.gsd.fsml.viewCategory"
+         name="FSMLs"/>
+   <view
+         allowMultiple="false"
+         category="ca.uwaterloo.gsd.fsml.viewCategory"
+         class="ca.uwaterloo.gsd.fsml.ui.ModelCodeSynchronizationView"
+         icon="icons/synch_synch.gif"
+         id="ca.uwaterloo.gsd.fsml.ModelCodeSynchronizationView"
+         name="Model-Code Synchronization"/>
+   <view
+         allowMultiple="false"
+         category="ca.uwaterloo.gsd.fsml.viewCategory"
+         class="ca.uwaterloo.gsd.fsml.ui.ModelCodeNavigationView"
+         icon="icons/gotoobj_tsk.gif"
+         id="ca.uwaterloo.gsd.fsml.GoToView"
+         name="Model-Code Navigation"/>
+</extension>
+  <extension
+        id="marker"
+        name="FSML concept or feature implementation"
+        point="org.eclipse.core.resources.markers">
+     <super type="org.eclipse.core.resources.textmarker"/>
+     <persistent value="true"/>
+     <attribute name="id"/>
+     <attribute name="message"/>
+  </extension>
+  <extension
+        point="org.eclipse.ui.popupMenus">
+     <objectContribution
+           adaptable="false"
+           id="ca.uwaterloo.gsd.fsml.objectContribution1"
+           objectClass="ca.uwaterloo.gsd.fsml.fsml.Concept">
+        <action
+              class="ca.uwaterloo.gsd.fsml.ui.ShowModelCodeNavigationView"
+              icon="icons/gotoobj_tsk.gif"
+              id="ca.uwaterloo.gsd.fsml.action1"
+              label="&amp;Navigate to Code"
+              menubarPath="additions"/>
+     </objectContribution>
+     <objectContribution
+         adaptable="false"
+         id="ca.uwaterloo.gsd.wpi.code.ClassSyncItem"
+         objectClass="ca.uwaterloo.gsd.fsml.sync.ClassSyncItem">
+      <action
+            class="ca.uwaterloo.gsd.fsml.ui.ModelCodeReconcileAction"
+            enablesFor="1"
+            icon="icons/synced.gif"
+            id="ca.uwaterloo.gsd.wpi.code.modelCodeReconcile"
+            label="Model-Code Reconcile"
+            tooltip="Executes Reconciliation according to the decisions"/>
+   </objectContribution>
+  </extension>
+  <extension
+        point="org.eclipse.ui.newWizards">
+     <category
+           id="ca.uwaterloo.gsd.fsml.wizardCategory"
+           name="FSMLs"/>
+  </extension>
+  <extension
+        point="org.eclipse.ui.preferencePages">
+     <page
+           class="ca.uwaterloo.gsd.fsml.preferences.FSMLPreferencePage"
+           id="ca.uwaterloo.gsd.fsml.preferences.FSMLPreferencePage"
+           name="FSML">
+     </page>
+  </extension>
+  <extension
+        point="org.eclipse.core.runtime.preferences">
+     <initializer
+           class="ca.uwaterloo.gsd.fsml.preferences.FSMLPreferenceInitializer">
+     </initializer>
+  </extension>
+</plugin>
+

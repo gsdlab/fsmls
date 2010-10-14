@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ContentAssist Plug-in
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.codeAssist;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: ca.uwaterloo.gsd.fsml.contentassist.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.jface.text,
+ ca.uwaterloo.gsd.fsml.javaMappingInterpreter,
+ ca.uwaterloo.gsd.fsml.core,
+ org.eclipse.ui.ide,
+ ca.uwaterloo.gsd.fsml.xmlMappingInterpreter,
+ org.eclipse.wst.sse.core,
+ org.eclipse.wst.xml.core,
+ org.eclipse.ltk.core.refactoring,
+ org.eclipse.ui.editors,
+ org.eclipse.ltk.ui.refactoring
+Bundle-ActivationPolicy: lazy
+Export-Package: ca.uwaterloo.gsd.fsml.codeAssist,
+ ca.uwaterloo.gsd.fsml.contentassist,
+ ca.uwaterloo.gsd.fsml.quickFix
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

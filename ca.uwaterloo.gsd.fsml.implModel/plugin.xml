@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2008/01/30 23:46:32 Herman Lee <hlee@gsd.uwaterloo.ca> $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://ca.uwaterloo.gsd/implModel" 
+       class = "ca.uwaterloo.gsd.fsml.implModel.provider.ImplModelItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://ca.uwaterloo.gsd/implModel"
+       class = "ca.uwaterloo.gsd.fsml.implModel.ImplModelPackage" />
+  </extension>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "ca.uwaterloo.gsd.fsml.implModel.presentation.ImplModelModelWizardID"
+      name = "%_UI_ImplModelModelWizard_label"
+      class = "ca.uwaterloo.gsd.fsml.implModel.presentation.ImplModelModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/ImplModelModelFile.gif">
+      <description>%_UI_ImplModelModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "ca.uwaterloo.gsd.fsml.implModel.presentation.ImplModelEditorID"
+        name = "%_UI_ImplModelEditor_label"
+        icon = "icons/full/obj16/ImplModelModelFile.gif"
+        extensions = "implmodel"
+        class = "ca.uwaterloo.gsd.fsml.implModel.presentation.ImplModelEditor" 
+        contributorClass="ca.uwaterloo.gsd.fsml.implModel.presentation.ImplModelActionBarContributor" >
+    </editor>
+  </extension>    
+</plugin>

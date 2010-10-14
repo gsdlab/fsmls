@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="false"
+            category="ca.uwaterloo.gsd.fsml.wizardCategory"
+            class="ca.uwaterloo.gsd.applet.code.ui.AppletAnalysisWizard"
+            hasPages="true"
+            icon="icons/AppletModelFile.gif"
+            id="ca.uwaterloo.gsd.applet.code.AppletAnalysisWizard"
+            name="Applet Analysis Wizard"
+            project="false">
+         <description>
+            This wizard reverse-engineers a Java project and produces a framework-specific model containing all Java applets implemented in the project.
+         </description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="ca.uwaterloo.gsd.applet.code.editorContribution1"
+            targetID="ca.uwaterloo.gsd.applet.presentation.AppletEditorID">
+            <action
+                  class="ca.uwaterloo.gsd.applet.code.ui.AppletModelCodeSynchronizeAction"
+                  enablesFor="1"
+                  icon="icons/synch_synch.gif"
+                  id="ca.uwaterloo.gsd.applet.code.action1"
+                  label="Model-Code Synchronize"
+                  toolbarPath="ca.uwaterloo.gsd.applet.menu"
+                  tooltip="Computes synchronization states for model elements">
+	            <enablement>
+	               <objectClass name="ca.uwaterloo.gsd.fsml.fsml.Model"/>
+	            </enablement>
+	            <selection class="ca.uwaterloo.gsd.fsml.fsml.Model"/>
+	         </action>
+		</editorContribution>
+	</extension>
+</plugin>

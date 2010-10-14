@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="id1"
+         point="org.eclipse.jdt.ui.javaCompletionProposalComputer">
+      <javaCompletionProposalComputer
+            activate="true"
+            categoryId="org.eclipse.jdt.ui.templateProposalCategory"
+            class="ca.uwaterloo.gsd.fsml.contentassist.FSMLJavaContentCompleteProcessor">
+      </javaCompletionProposalComputer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="ca.uwaterloo.gsd.fsml.quickFix.FSMLProblemMarkersStartupManager">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="ca.uwaterloo.gsd.fsml.quickFix.FSMLProblemMarkerResolutionGenerator"
+            markerType="org.eclipse.core.resources.problemmarker">
+      </markerResolutionGenerator>
+   </extension>
+
+</plugin>

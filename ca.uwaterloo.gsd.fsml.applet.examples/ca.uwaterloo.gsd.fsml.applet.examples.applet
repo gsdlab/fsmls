@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fsml:ModelContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:applet="http://ca.uwaterloo.gsd/applet" xmlns:fsml="http://ca.uwaterloo.gsd/fsml">
+  <assertedModel xsi:type="applet:AppletModel">
+    <applets name="TestApplet2">
+      <extendsApplet/>
+      <overridesLifecycleMethods init="true"/>
+      <showsStatus>
+        <message>initializer value</message>
+      </showsStatus>
+      <showsStatus>
+        <message>parameter X = garbage</message>
+      </showsStatus>
+      <showsStatus>
+        <message>initializing...</message>
+        <message>garbage</message>
+        <message>loading images...</message>
+      </showsStatus>
+      <singleTaskThread>
+        <runnableField name="oneTimeThread"/>
+      </singleTaskThread>
+      <parameter>
+        <name>fileName</name>
+      </parameter>
+      <parameter>
+        <name>X</name>
+      </parameter>
+      <parameter>
+        <name>arrayParam1</name>
+        <name>arrayParam2</name>
+        <name>arrayParam3</name>
+      </parameter>
+    </applets>
+    <applets name="test.TestApplet">
+      <extendsApplet extendsJApplet="true"/>
+      <overridesLifecycleMethods init="true" start="true" paint="true"/>
+      <showsStatus>
+        <message>initializing...</message>
+      </showsStatus>
+      <registersMouseListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersMouseListener>
+      <registersMouseListener>
+        <mouseListenerField listenerField="mouseListenerField">
+          <deregisters/>
+        </mouseListenerField>
+      </registersMouseListener>
+      <registersMouseMotionListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersMouseMotionListener>
+      <registersMouseMotionListener>
+        <mouseMotionListenerField listenerField="mouseMotionListenerField">
+          <deregisters/>
+        </mouseMotionListenerField>
+      </registersMouseMotionListener>
+      <registersKeyListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersKeyListener>
+      <registersKeyListener>
+        <keyListenerField listenerField="keyListenerField">
+          <deregisters/>
+        </keyListenerField>
+      </registersKeyListener>
+      <thread thread="thread1Helper">
+        <initializesThread>
+          <initializesThreadWithRunnable helper="true"/>
+        </initializesThread>
+      </thread>
+      <thread thread="thread2Variable">
+        <initializesThread>
+          <initializesThreadWithRunnable variable="thread2runnableVariable"/>
+        </initializesThread>
+      </thread>
+      <thread thread="thread3This">
+        <initializesThread>
+          <initializesThreadWithRunnable>
+            <this/>
+          </initializesThreadWithRunnable>
+        </initializesThread>
+      </thread>
+      <thread thread="thread4Field">
+        <initializesThread>
+          <initializesThreadWithRunnable>
+            <runnableField name="thread4runnableField"/>
+          </initializesThreadWithRunnable>
+        </initializesThread>
+      </thread>
+      <thread thread="thread5Subclass" nullifiesThread="false">
+        <initializesThread>
+          <initializesWithThreadSubclass name="test.TestApplet$CustomThread" overriddesRun="true"/>
+        </initializesThread>
+      </thread>
+      <singleTaskThread runnable="true"/>
+      <parameter>
+        <name>WIDTH</name>
+      </parameter>
+    </applets>
+  </assertedModel>
+  <lastReconciledModel xsi:type="applet:AppletModel">
+    <applets name="TestApplet2">
+      <extendsApplet/>
+      <overridesLifecycleMethods init="true"/>
+      <showsStatus>
+        <message>initializer value</message>
+      </showsStatus>
+      <showsStatus>
+        <message>parameter X = garbage</message>
+      </showsStatus>
+      <showsStatus>
+        <message>initializing...</message>
+        <message>garbage</message>
+        <message>loading images...</message>
+      </showsStatus>
+      <singleTaskThread>
+        <runnableField name="oneTimeThread"/>
+      </singleTaskThread>
+      <parameter>
+        <name>fileName</name>
+      </parameter>
+      <parameter>
+        <name>X</name>
+      </parameter>
+      <parameter>
+        <name>arrayParam1</name>
+        <name>arrayParam2</name>
+        <name>arrayParam3</name>
+      </parameter>
+    </applets>
+    <applets name="test.TestApplet">
+      <extendsApplet extendsJApplet="true"/>
+      <overridesLifecycleMethods init="true" start="true" paint="true"/>
+      <showsStatus>
+        <message>initializing...</message>
+      </showsStatus>
+      <registersMouseListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersMouseListener>
+      <registersMouseListener>
+        <mouseListenerField listenerField="mouseListenerField">
+          <deregisters/>
+        </mouseListenerField>
+      </registersMouseListener>
+      <registersMouseMotionListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersMouseMotionListener>
+      <registersMouseMotionListener>
+        <mouseMotionListenerField listenerField="mouseMotionListenerField">
+          <deregisters/>
+        </mouseMotionListenerField>
+      </registersMouseMotionListener>
+      <registersKeyListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersKeyListener>
+      <registersKeyListener>
+        <keyListenerField listenerField="keyListenerField">
+          <deregisters/>
+        </keyListenerField>
+      </registersKeyListener>
+      <thread thread="thread1Helper">
+        <initializesThread>
+          <initializesThreadWithRunnable helper="true"/>
+        </initializesThread>
+      </thread>
+      <thread thread="thread2Variable">
+        <initializesThread>
+          <initializesThreadWithRunnable variable="thread2runnableVariable"/>
+        </initializesThread>
+      </thread>
+      <thread thread="thread3This">
+        <initializesThread>
+          <initializesThreadWithRunnable>
+            <this/>
+          </initializesThreadWithRunnable>
+        </initializesThread>
+      </thread>
+      <thread thread="thread4Field">
+        <initializesThread>
+          <initializesThreadWithRunnable>
+            <runnableField name="thread4runnableField"/>
+          </initializesThreadWithRunnable>
+        </initializesThread>
+      </thread>
+      <thread thread="thread5Subclass" nullifiesThread="false">
+        <initializesThread>
+          <initializesWithThreadSubclass name="test.TestApplet$CustomThread" overriddesRun="true"/>
+        </initializesThread>
+      </thread>
+      <singleTaskThread runnable="true"/>
+      <parameter>
+        <name>WIDTH</name>
+      </parameter>
+    </applets>
+  </lastReconciledModel>
+</fsml:ModelContainer>

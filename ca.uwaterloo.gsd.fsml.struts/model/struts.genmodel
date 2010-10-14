@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010 Michal Antkiewicz.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      Michal Antkiewicz - initial API and implementation
+-->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.uwaterloo.gsd.fsml.struts/src"
+    editDirectory="/ca.uwaterloo.gsd.fsml.struts/src" editorDirectory="/ca.uwaterloo.gsd.fsml.struts/src"
+    modelPluginID="ca.uwaterloo.gsd.fsml.struts" modelName="Struts" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    usedGenPackages="platform:/plugin/ca.uwaterloo.gsd.fsml.core/model/fsml.genmodel#//fsml">
+  <foreignModel>struts.ecore</foreignModel>
+  <genPackages prefix="Struts" basePackage="ca.uwaterloo.gsd" disposableProviderFactory="true"
+      providerPackageSuffix="edit" presentationPackageSuffix="ui" testsPackageSuffix=""
+      multipleEditorPages="false" ecorePackage="struts.ecore#/">
+    <genClasses ecoreClass="struts.ecore#//StrutsApplication">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//StrutsApplication/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//StrutsApplication/strutsConfig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//StrutsApplication/forms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//StrutsApplication/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//FormImpl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormImpl/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormImpl/package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormImpl/qualifiedName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormImpl/local"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//FormImpl/extendsActionForm"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//ExtendsActionForm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ExtendsActionForm/extendsDynaActionForm"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//ActionImpl" labelFeature="#//struts/ActionImpl/name">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ActionImpl/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ActionImpl/package"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ActionImpl/qualifiedName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ActionImpl/local"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//ActionImpl/extendsAction"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference struts.ecore#//ActionImpl/forwards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//ActionImpl/inputForwards"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//ForwardImpl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ForwardImpl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//ForwardImpl/forward"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//InputForwardImpl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//InputForwardImpl/name"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//Forward">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference struts.ecore#//Forward/localForward"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference struts.ecore#//Forward/globalForward"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//ExtendsAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//ExtendsAction/extendsDispatchAction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ExtendsAction/overridesExecute"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//ExtendsDispatchAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ExtendsDispatchAction/actionMethod"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//StrutsConfig">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//StrutsConfig/forms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//StrutsConfig/forwards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//StrutsConfig/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//ActionDecl" labelFeature="#//struts/ActionDecl/path">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ActionDecl/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ActionDecl/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ActionDecl/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference struts.ecore#//ActionDecl/actionImpl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//ActionDecl/forwards"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ActionDecl/input"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//FormDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormDecl/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormDecl/formType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormDecl/isDynaActionForm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference struts.ecore#//FormDecl/formProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//ForwardDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ForwardDecl/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//ForwardDecl/path"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference struts.ecore#//ForwardDecl/target"/>
+    </genClasses>
+    <genClasses ecoreClass="struts.ecore#//FormProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute struts.ecore#//FormProperty/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

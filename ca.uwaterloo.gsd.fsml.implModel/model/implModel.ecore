@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="implModel"
+    nsURI="http://ca.uwaterloo.gsd/implModel" nsPrefix="implModel">
+  <eClassifiers xsi:type="ecore:EClass" name="implModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaults" upperBound="-1"
+        eType="#//Default" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variants" upperBound="-1"
+        eType="#//Variant" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Default" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overridden" unique="false"
+        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eClass" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eStructuralFeature" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variant" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eClass" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="">
+      <eAnnotations source="key"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eStructuralFeature" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="key"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Position">
+    <eLiterals name="BEFORE"/>
+    <eLiterals name="AFTER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="default_assignedWithNew" eSuperTypes="#//Default">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+        upperBound="-1" eType="#//variant_assignedWithNew" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="default_assignedWithNull" eSuperTypes="#//Default">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+        upperBound="-1" eType="#//variant_assignedWithNull" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="default_extendsClass" eSuperTypes="#//Default">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+        upperBound="-1" eType="#//variant_extendsClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="default_implementsInterface" eSuperTypes="#//Default">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+        upperBound="-1" eType="#//variant_implementsInterface" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="default_callsReceived" eSuperTypes="#//Default">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+        upperBound="-1" eType="#//variant_callsReceived" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="default_methodCalls" eSuperTypes="#//Default">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+        upperBound="-1" eType="#//variant_methodCalls" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="default_typedWith" eSuperTypes="#//Default">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+        upperBound="-1" eType="#//variant_typedWith" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_assignedWithNew" abstract="true"
+      eSuperTypes="#//Variant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_assignedWithNull" abstract="true"
+      eSuperTypes="#//Variant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_extendsClass" abstract="true"
+      eSuperTypes="#//Variant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_implementsInterface" abstract="true"
+      eSuperTypes="#//Variant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_callsReceived" abstract="true"
+      eSuperTypes="#//Variant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_methodCalls" abstract="true"
+      eSuperTypes="#//Variant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_typedWith" abstract="true" eSuperTypes="#//Variant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_assignedWithNew_Initializer"
+      eSuperTypes="#//variant_assignedWithNew">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_assignedWithNew_InMethod" eSuperTypes="#//variant_assignedWithNew">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_extendsClass_Directly" eSuperTypes="#//variant_extendsClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_extendsClass_Indirectly" eSuperTypes="#//variant_extendsClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_implementsInterface_Directly"
+      eSuperTypes="#//variant_implementsInterface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_implementsInterface_Indirectly"
+      eSuperTypes="#//variant_implementsInterface">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_callsReceived_InMethod" eSuperTypes="#//variant_callsReceived">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="key"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_methodCalls_InMethod" eSuperTypes="#//variant_methodCalls">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="key"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_typedWith_Directly" eSuperTypes="#//variant_typedWith"/>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_typedWith_Indirectly" eSuperTypes="#//variant_typedWith">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_assignedWithNull_Initializer"
+      eSuperTypes="#//variant_assignedWithNull">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="variant_assignedWithNull_InMethod" eSuperTypes="#//variant_assignedWithNull">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="ca.uwaterloo.gsd.fsml.featureInstancesCodeLocator"
+         name="FSML CodeGen"
+         point="org.eclipse.ui.views">
+      <view
+            category="ca.uwaterloo.gsd.fsml.viewCategory"
+            class="ca.uwaterloo.gsd.fsml.recommender.FeatureInstancesCodeLocatorView"
+            id="ca.uwaterloo.gsd.fsml.codeLocationAssist.featureInstancesCodeLocatorView"
+            name="FSML CodeGen">
+      </view>
+   </extension>
+
+</plugin>

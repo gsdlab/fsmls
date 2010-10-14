@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fsml:ModelContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fsml="http://ca.uwaterloo.gsd/fsml" xmlns:wpi="http://ca.uwaterloo.gsd/wpi">
+  <assertedModel xsi:type="wpi:WorkbenchPartInteractions" project="ca.uwaterloo.gsd.fsml.wpi.feEvaluation">
+    <parts xsi:type="wpi:ViewPart" name="ProgressView" package="org.eclipse.ui.internal.progress" local="false">
+      <implementsIViewPart>
+        <extendsViewPart/>
+      </implementsIViewPart>
+    </parts>
+    <parts xsi:type="wpi:ViewPart" name="ErrorViewPart" package="org.eclipse.ui.internal" local="false">
+      <implementsIViewPart>
+        <extendsViewPart/>
+      </implementsIViewPart>
+    </parts>
+    <parts xsi:type="wpi:ViewPart" name="ViewIntroAdapterPart" package="org.eclipse.ui.internal" local="false">
+      <implementsIViewPart>
+        <extendsViewPart/>
+      </implementsIViewPart>
+    </parts>
+    <parts xsi:type="wpi:ViewPart" name="VirtualProgressView" package="org.eclipse.ui.internal.progress" local="false">
+      <implementsIViewPart>
+        <extendsViewPart/>
+      </implementsIViewPart>
+    </parts>
+    <parts xsi:type="wpi:EditorPart" name="ErrorEditorPart" package="org.eclipse.ui.internal" local="false">
+      <implementsIEditorPart>
+        <extendsEditorPart/>
+      </implementsIEditorPart>
+    </parts>
+    <parts xsi:type="wpi:ViewPart" name="View1" package="parts">
+      <implementsIViewPart/>
+    </parts>
+    <parts xsi:type="wpi:ViewPart" name="View2" package="parts" partId="View2.ID">
+      <implementsIViewPart>
+        <extendsViewPart/>
+      </implementsIViewPart>
+    </parts>
+    <parts xsi:type="wpi:ViewPart" name="View3" package="parts">
+      <implementsIViewPart>
+        <extendsViewPart extendsPageBookView="true"/>
+      </implementsIViewPart>
+    </parts>
+    <parts xsi:type="wpi:EditorPart" name="Editor1" package="parts">
+      <implementsIEditorPart/>
+    </parts>
+    <parts xsi:type="wpi:EditorPart" name="Editor2" package="parts">
+      <implementsIEditorPart>
+        <extendsEditorPart/>
+      </implementsIEditorPart>
+    </parts>
+    <parts xsi:type="wpi:EditorPart" name="Editor3" package="parts">
+      <implementsIEditorPart>
+        <extendsEditorPart extendsMultiPageEditorPart="true"/>
+      </implementsIEditorPart>
+    </parts>
+    <selectionProviders provider="//@assertedModel/@parts.0">
+      <registers>
+        <registersField field="viewer"/>
+      </registers>
+    </selectionProviders>
+    <selectionProviders provider="//@assertedModel/@parts.3">
+      <registers>
+        <registersField field="viewer"/>
+      </registers>
+    </selectionProviders>
+    <selectionProviders provider="//@assertedModel/@parts.5">
+      <registers>
+        <registersThis/>
+      </registers>
+    </selectionProviders>
+    <selectionProviders provider="//@assertedModel/@parts.6">
+      <registers registersHelper="true"/>
+    </selectionProviders>
+    <selectionProviders provider="//@assertedModel/@parts.7">
+      <registers registersVariable="selectionProviderVar"/>
+    </selectionProviders>
+    <selectionProviders provider="//@assertedModel/@parts.8">
+      <registers>
+        <registersField field="selectionProviderFld"/>
+      </registers>
+    </selectionProviders>
+    <selectionProviders provider="//@assertedModel/@parts.9">
+      <registers>
+        <registersThis/>
+      </registers>
+    </selectionProviders>
+    <selectionProviders provider="//@assertedModel/@parts.10">
+      <registers registersHelper="true"/>
+    </selectionProviders>
+    <selectionListeners listener="//@assertedModel/@parts.5">
+      <registersAs>
+        <globalSelectionListener>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </globalSelectionListener>
+        <globalPostSelectionListener>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </globalPostSelectionListener>
+        <specificSelectionListener registrationPartId="View2.ID">
+          <deregisters deregistrationPartId="View2.ID">
+            <deregistersSameObject/>
+          </deregisters>
+        </specificSelectionListener>
+      </registersAs>
+    </selectionListeners>
+    <selectionListeners listener="//@assertedModel/@parts.6">
+      <registersAs>
+        <globalPostSelectionListener>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </globalPostSelectionListener>
+      </registersAs>
+    </selectionListeners>
+    <selectionListeners listener="//@assertedModel/@parts.7">
+      <registersAs>
+        <specificSelectionListener registrationPartId="View2.ID">
+          <deregisters deregistrationPartId="View2.ID">
+            <deregistersSameObject/>
+          </deregisters>
+        </specificSelectionListener>
+      </registersAs>
+    </selectionListeners>
+    <selectionListeners listener="//@assertedModel/@parts.8">
+      <registersAs>
+        <globalSelectionListener>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </globalSelectionListener>
+      </registersAs>
+    </selectionListeners>
+    <selectionListeners listener="//@assertedModel/@parts.9">
+      <registersAs>
+        <globalPostSelectionListener>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </globalPostSelectionListener>
+      </registersAs>
+    </selectionListeners>
+    <selectionListeners listener="//@assertedModel/@parts.10">
+      <registersAs>
+        <specificSelectionListener registrationPartId="View2.ID">
+          <deregisters deregistrationPartId="View2.ID">
+            <deregistersSameObject/>
+          </deregisters>
+        </specificSelectionListener>
+      </registersAs>
+    </selectionListeners>
+    <partListeners listener="//@assertedModel/@parts.5">
+      <registersAPartListener>
+        <registers>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </registers>
+      </registersAPartListener>
+    </partListeners>
+    <partListeners listener="//@assertedModel/@parts.6">
+      <registersAPartListener>
+        <registers2>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </registers2>
+      </registersAPartListener>
+    </partListeners>
+    <partListeners listener="//@assertedModel/@parts.7">
+      <registersAPartListener>
+        <registers>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </registers>
+      </registersAPartListener>
+    </partListeners>
+    <partListeners listener="//@assertedModel/@parts.8">
+      <registersAPartListener>
+        <registers2>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </registers2>
+      </registersAPartListener>
+    </partListeners>
+    <partListeners listener="//@assertedModel/@parts.9">
+      <registersAPartListener>
+        <registers>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </registers>
+      </registersAPartListener>
+    </partListeners>
+    <partListeners listener="//@assertedModel/@parts.10">
+      <registersAPartListener>
+        <registers2>
+          <deregisters>
+            <deregistersSameObject/>
+          </deregisters>
+        </registers2>
+      </registersAPartListener>
+    </partListeners>
+    <adapterProviders adapterProvider="//@assertedModel/@parts.7">
+      <providesAdapter>
+        <adapters>org.eclipse.jface.viewers.IContentProvider</adapters>
+        <adapters>org.eclipse.jface.viewers.ILabelProvider</adapters>
+      </providesAdapter>
+    </adapterProviders>
+    <adapterProviders adapterProvider="//@assertedModel/@parts.10">
+      <providesAdapter>
+        <adapters>org.eclipse.jface.viewers.IContentProvider</adapters>
+        <adapters>org.eclipse.jface.viewers.ILabelProvider</adapters>
+      </providesAdapter>
+    </adapterProviders>
+    <adapterRequestors adapterRequestor="//@assertedModel/@parts.7">
+      <requestsAdapter adapter="org.eclipse.jface.viewers.IContentProvider"/>
+      <requestsAdapter adapter="org.eclipse.jface.viewers.ILabelProvider"/>
+    </adapterRequestors>
+  </assertedModel>
+  <lastReconciledModel xsi:type="wpi:WorkbenchPartInteractions" project="ca.uwaterloo.gsd.fsml.wpi.feEvaluation"/>
+</fsml:ModelContainer>

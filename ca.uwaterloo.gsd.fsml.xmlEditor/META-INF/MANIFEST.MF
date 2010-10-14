@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XmlEditor Plug-in
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.xmlEditor;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: ca.uwaterloo.gsd.fsml.xmleditor.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.wst.sse.core,
+ org.eclipse.wst.xml.core,
+ org.eclipse.wst.sse.ui,
+ org.eclipse.core.resources,
+ ca.uwaterloo.gsd.fsml.core,
+ ca.uwaterloo.gsd.fsml.codeAssist,
+ ca.uwaterloo.gsd.fsml.xmlMappingInterpreter
+Bundle-ActivationPolicy: lazy

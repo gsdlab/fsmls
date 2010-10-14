@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fsml:ModelContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:applet="http://ca.uwaterloo.gsd/applet" xmlns:fsml="http://ca.uwaterloo.gsd/fsml">
+  <assertedModel xsi:type="applet:AppletModel">
+    <applets name="Applet1">
+      <extendsApplet/>
+      <overridesLifecycleMethods init="true" start="true" paint="true" stop="true" destroy="true"/>
+      <showsStatus>
+        <message>status1</message>
+        <message>status2</message>
+      </showsStatus>
+      <registersMouseListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersMouseListener>
+      <registersMouseMotionListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersMouseMotionListener>
+      <registersKeyListener>
+        <this>
+          <deregisters/>
+        </this>
+      </registersKeyListener>
+      <thread thread="threadThis">
+        <initializesThread>
+          <initializesThreadWithRunnable>
+            <this/>
+          </initializesThreadWithRunnable>
+        </initializesThread>
+      </thread>
+      <thread thread="threadField">
+        <initializesThread>
+          <initializesThreadWithRunnable>
+            <runnableField name="threadFieldRunnable"/>
+          </initializesThreadWithRunnable>
+        </initializesThread>
+      </thread>
+      <thread thread="threadHelper">
+        <initializesThread>
+          <initializesThreadWithRunnable helper="true"/>
+        </initializesThread>
+      </thread>
+      <thread thread="threadVariable">
+        <initializesThread>
+          <initializesThreadWithRunnable variable="runnableVariable"/>
+        </initializesThread>
+      </thread>
+      <parameter>
+        <name>param1</name>
+        <name>param2</name>
+      </parameter>
+    </applets>
+    <applets name="Applet2">
+      <extendsApplet extendsJApplet="true"/>
+      <overridesLifecycleMethods init="true" destroy="true"/>
+      <showsStatus>
+        <message>status1</message>
+      </showsStatus>
+      <showsStatus>
+        <message>status2</message>
+      </showsStatus>
+      <registersMouseListener>
+        <mouseListenerField listenerField="mouseListener">
+          <deregisters/>
+        </mouseListenerField>
+      </registersMouseListener>
+      <registersMouseMotionListener>
+        <mouseMotionListenerField listenerField="mouseMotionListener">
+          <deregisters/>
+        </mouseMotionListenerField>
+      </registersMouseMotionListener>
+      <registersKeyListener>
+        <keyListenerField listenerField="keyListener">
+          <deregisters/>
+        </keyListenerField>
+      </registersKeyListener>
+      <thread thread="threadMyThread">
+        <initializesThread>
+          <initializesWithThreadSubclass name="Applet2$MyThread"/>
+        </initializesThread>
+      </thread>
+      <singleTaskThread runnable="true"/>
+      <singleTaskThread>
+        <runnableField name="singleTaskThreadRunnable"/>
+      </singleTaskThread>
+      <parameter>
+        <name>param1</name>
+      </parameter>
+      <parameter>
+        <name>param2</name>
+      </parameter>
+    </applets>
+  </assertedModel>
+  <lastReconciledModel xsi:type="applet:AppletModel">
+  </lastReconciledModel>
+</fsml:ModelContainer>

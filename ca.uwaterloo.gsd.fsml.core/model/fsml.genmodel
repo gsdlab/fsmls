@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010 Michal Antkiewicz.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      Michal Antkiewicz - initial API and implementation
+-->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.uwaterloo.gsd.fsml.core/src"
+    editDirectory="/ca.uwaterloo.gsd.fsml.core/src" editorDirectory="" modelPluginID="ca.uwaterloo.gsd.fsml.core"
+    modelName="Fsml" editorPluginClass="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0">
+  <foreignModel>fsml.ecore</foreignModel>
+  <genPackages prefix="Fsml" basePackage="ca.uwaterloo.gsd.fsml" disposableProviderFactory="true"
+      ecorePackage="fsml.ecore#/">
+    <genClasses image="false" ecoreClass="fsml.ecore#//Model"/>
+    <genClasses ecoreClass="fsml.ecore#//Concept">
+      <genOperations ecoreOperation="fsml.ecore#//Concept/inv_mandatoryFeatures">
+        <genParameters ecoreParameter="fsml.ecore#//Concept/inv_mandatoryFeatures/diagnostics"/>
+        <genParameters ecoreParameter="fsml.ecore#//Concept/inv_mandatoryFeatures/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="fsml.ecore#//Concept/inv_featureGroupConstraint">
+        <genParameters ecoreParameter="fsml.ecore#//Concept/inv_featureGroupConstraint/diagnostics"/>
+        <genParameters ecoreParameter="fsml.ecore#//Concept/inv_featureGroupConstraint/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="fsml.ecore#//ModelContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fsml.ecore#//ModelContainer/assertedModel"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference fsml.ecore#//ModelContainer/lastReconciledModel"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

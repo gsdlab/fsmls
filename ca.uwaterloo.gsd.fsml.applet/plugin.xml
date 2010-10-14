@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.6 2007/12/05 16:18:37 Michal Antkiewicz <mantkiew@gsd.uwaterloo.ca> $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://ca.uwaterloo.gsd/applet" 
+       class = "ca.uwaterloo.gsd.applet.provider.AppletItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://ca.uwaterloo.gsd/applet"
+       class = "ca.uwaterloo.gsd.applet.AppletPackage"
+       genModel = "model/applet.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser
+       type="applet"
+       class="ca.uwaterloo.gsd.applet.util.AppletResourceFactoryImpl" />
+  </extension>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <wizard
+      id = "ca.uwaterloo.gsd.applet.presentation.AppletModelWizardID"
+      name = "%_UI_AppletModelWizard_label"
+      class = "ca.uwaterloo.gsd.applet.presentation.AppletModelWizard"
+      category = "ca.uwaterloo.gsd.fsml.wizardCategory"
+      icon = "icons/full/obj16/AppletModelFile.gif">
+      <description>%_UI_AppletModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "ca.uwaterloo.gsd.applet.presentation.AppletEditorID"
+        name = "%_UI_AppletEditor_label"
+        icon = "icons/full/obj16/AppletModelFile.gif"
+        extensions = "applet"
+        class = "ca.uwaterloo.gsd.applet.presentation.AppletEditor" 
+        contributorClass="ca.uwaterloo.gsd.applet.presentation.AppletActionBarContributor" >
+    </editor>
+  </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menu
+           id="ca.uwaterloo.gsd.applet.menu"
+           label="Applet FSML"/>
+  </extension>    
+</plugin>

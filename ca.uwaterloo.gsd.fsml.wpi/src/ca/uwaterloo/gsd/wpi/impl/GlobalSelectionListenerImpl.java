@@ -1,0 +1,162 @@
+/*******************************************************************************
+ * Copyright (c) 2010 Michal Antkiewicz.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Michal Antkiewicz - initial API and implementation
+ ******************************************************************************/
+/**
+  *
+ *
+ *
+ * $Id: GlobalSelectionListenerImpl.java,v 1.4 2008/02/29 22:33:01 Michal Antkiewicz <mantkiew@gsd.uwaterloo.ca> $
+ */
+package ca.uwaterloo.gsd.wpi.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import ca.uwaterloo.gsd.fsml.fsml.impl.ConceptImpl;
+import ca.uwaterloo.gsd.wpi.Deregisters;
+import ca.uwaterloo.gsd.wpi.GlobalSelectionListener;
+import ca.uwaterloo.gsd.wpi.WpiPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Global Selection Listener</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link ca.uwaterloo.gsd.wpi.impl.GlobalSelectionListenerImpl#getDeregisters <em>Deregisters</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class GlobalSelectionListenerImpl extends ConceptImpl implements GlobalSelectionListener {
+	/**
+	 * The cached value of the '{@link #getDeregisters() <em>Deregisters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeregisters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Deregisters> deregisters;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GlobalSelectionListenerImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return WpiPackage.Literals.GLOBAL_SELECTION_LISTENER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Deregisters> getDeregisters() {
+		if (deregisters == null) {
+			deregisters = new EObjectContainmentEList<Deregisters>(Deregisters.class, this, WpiPackage.GLOBAL_SELECTION_LISTENER__DEREGISTERS);
+		}
+		return deregisters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WpiPackage.GLOBAL_SELECTION_LISTENER__DEREGISTERS:
+				return ((InternalEList<?>)getDeregisters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case WpiPackage.GLOBAL_SELECTION_LISTENER__DEREGISTERS:
+				return getDeregisters();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case WpiPackage.GLOBAL_SELECTION_LISTENER__DEREGISTERS:
+				getDeregisters().clear();
+				getDeregisters().addAll((Collection<? extends Deregisters>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case WpiPackage.GLOBAL_SELECTION_LISTENER__DEREGISTERS:
+				getDeregisters().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case WpiPackage.GLOBAL_SELECTION_LISTENER__DEREGISTERS:
+				return deregisters != null && !deregisters.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //GlobalSelectionListenerImpl

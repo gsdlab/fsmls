@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="editors.Editor1"
+            contributorClass="editors.Editor1Contributor"
+            filenames="editor1"
+            id="ca.uwaterloo.gsd.fsml.wpi.examples.editor1"
+            name="Editor1">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="views.View1"
+            id="ca.uwaterloo.gsd.fsml.wpi.examples.view1"
+            name="View1">
+      </view>
+   </extension>
+
+</plugin>

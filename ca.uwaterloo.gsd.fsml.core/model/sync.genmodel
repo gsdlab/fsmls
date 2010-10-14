@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010 Michal Antkiewicz.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      Michal Antkiewicz - initial API and implementation
+-->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.uwaterloo.gsd.fsml.core/src"
+    editDirectory="/ca.uwaterloo.gsd.fsml.core/src" editorDirectory="" modelPluginID="ca.uwaterloo.gsd.fsml.core"
+    modelName="Sync" editorPluginClass="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/ca.uwaterloo.gsd.fsml.core/model/fsml.genmodel#//fsml">
+  <foreignModel>sync.ecore</foreignModel>
+  <genPackages prefix="Sync" basePackage="ca.uwaterloo.gsd.fsml" disposableProviderFactory="true"
+      ecorePackage="sync.ecore#/">
+    <genEnums ecoreEnum="sync.ecore#//SynchronizationState">
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/unspecified"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/unchanged"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/addedModel"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/changedModel"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/removedModel"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/addedCode"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/changedCode"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/removedCode"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/changed"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/addedConsistently"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/changedConsistently"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/removedConsistently"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/addedInconsistently"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/changedInconsistently"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/removedCodeChangedModel"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//SynchronizationState/removedModelChangedCode"/>
+    </genEnums>
+    <genEnums ecoreEnum="sync.ecore#//ReconciliationDecision">
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//ReconciliationDecision/unspecified"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//ReconciliationDecision/ignore"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//ReconciliationDecision/enforce"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//ReconciliationDecision/update"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//ReconciliationDecision/overrideAndEnforce"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//ReconciliationDecision/overrideAndUpdate"/>
+      <genEnumLiterals ecoreEnumLiteral="sync.ecore#//ReconciliationDecision/enforceAndUpdate"/>
+    </genEnums>
+    <genClasses ecoreClass="sync.ecore#//SyncItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sync.ecore#//SyncItem/synchronizationState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sync.ecore#//SyncItem/reconciliationDecision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sync.ecore#//SyncItem/result"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/isStateForward"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/isStateReverse"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/isStateConflict"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/isStateChanged"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/isDecisionIgnore"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/isDecisionEnforce"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/isDecisionUpdate"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/isDecisionValid">
+        <genParameters ecoreParameter="sync.ecore#//SyncItem/isDecisionValid/decision"/>
+      </genOperations>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/getModel"/>
+      <genOperations ecoreOperation="sync.ecore#//SyncItem/getCode"/>
+    </genClasses>
+    <genClasses ecoreClass="sync.ecore#//SynchronizationResult">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference sync.ecore#//SynchronizationResult/assertedModel"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference sync.ecore#//SynchronizationResult/implementationModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sync.ecore#//SynchronizationResult/classSyncItems"/>
+    </genClasses>
+    <genClasses ecoreClass="sync.ecore#//ClassSyncItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sync.ecore#//ClassSyncItem/syncItems"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference sync.ecore#//ClassSyncItem/model"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference sync.ecore#//ClassSyncItem/code"/>
+    </genClasses>
+    <genClasses ecoreClass="sync.ecore#//StructuralFeatureSyncItem">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference sync.ecore#//StructuralFeatureSyncItem/structuralFeature"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

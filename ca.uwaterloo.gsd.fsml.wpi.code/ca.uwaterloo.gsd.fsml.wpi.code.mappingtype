@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fsml:ModelContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fsml="http://ca.uwaterloo.gsd/fsml" xmlns:mappingType="http://ca.uwaterloo.gsd.fsml/mappingType">
+  <assertedModel xsi:type="mappingType:MappingTypeModel" name="ca.uwaterloo.gsd.fsml.wpi.code">
+    <abstractMappingType name="ca.uwaterloo.gsd.fsml.wpi.interpreter.WpiMapping">
+      <context name="contextIJavaProject" type="org.eclipse.jdt.core.IJavaProject">
+        <annotatedWithContext mode="ALL" required="true"/>
+      </context>
+      <context name="contextIType" type="org.eclipse.jdt.core.IType">
+        <annotatedWithContext mode="ALL" required="true"/>
+      </context>
+    </abstractMappingType>
+    <mappingType name="ca.uwaterloo.gsd.fsml.wpi.interpreter.ViewPartIdMapping" forwardConstructor="ViewPartIdMapping" reverseConstructor="ViewPartIdMapping" reverseEssentialConstructor="ViewPartIdMapping" forwards="true" reverses="true" reversesEssential="true"/>
+    <mappingType name="ca.uwaterloo.gsd.fsml.wpi.interpreter.EditorPartIdMapping" forwardConstructor="EditorPartIdMapping" reverseConstructor="EditorPartIdMapping" reverseEssentialConstructor="EditorPartIdMapping" forwards="true" reverses="true" reversesEssential="true"/>
+    <mappingType name="ca.uwaterloo.gsd.fsml.wpi.interpreter.ContributorMapping" forwardConstructor="ContributorMapping" reverseConstructor="ContributorMapping" reverseEssentialConstructor="ContributorMapping" forwards="true" reverses="true" reversesEssential="true"/>
+    <mappingInterpreter name="ca.uwaterloo.gsd.wpi2.code.WpiMappingInterpreter" initializes="false" terminates="false">
+      <reverses reference="false"/>
+      <forwards attribute="false" reference="false" class="false"/>
+    </mappingInterpreter>
+  </assertedModel>
+  <lastReconciledModel xsi:type="mappingType:MappingTypeModel" name="ca.uwaterloo.gsd.fsml.wpi.code">
+    <mappingInterpreter name="ca.uwaterloo.gsd.wpi2.code.WpiMappingInterpreter" initializes="false" terminates="false">
+      <reverses reference="false"/>
+      <forwards attribute="false" reference="false" class="false"/>
+    </mappingInterpreter>
+  </lastReconciledModel>
+</fsml:ModelContainer>

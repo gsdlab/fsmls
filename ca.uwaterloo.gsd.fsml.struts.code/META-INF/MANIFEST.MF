@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Struts FSML Code
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.struts.code;singleton:=true
+Bundle-Version: 0.0.1
+Bundle-Activator: ca.uwaterloo.gsd.struts.code.Activator
+Bundle-Vendor: GSD Lab, University of Waterloo
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ ca.uwaterloo.gsd.fsml.xmlMappingInterpreter,
+ ca.uwaterloo.gsd.fsml.javaMappingInterpreter,
+ ca.uwaterloo.gsd.fsml.struts
+Bundle-ActivationPolicy: lazy
+Export-Package: ca.uwaterloo.gsd.struts.code,
+ ca.uwaterloo.gsd.struts.code.ui

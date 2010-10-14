@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.5 2008/03/20 16:25:27 Michal Antkiewicz <mantkiew@gsd.uwaterloo.ca> $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://gsd.uwaterloo.ca/fsml/struts" 
+       class = "ca.uwaterloo.gsd.struts.edit.StrutsItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://gsd.uwaterloo.ca/fsml/struts"
+       class = "ca.uwaterloo.gsd.struts.StrutsPackage"
+       genModel = "model/struts.genmodel" /> 
+  </extension>
+
+  
+  
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <wizard
+          canFinishEarly="false"
+          category="ca.uwaterloo.gsd.fsml.wizardCategory"
+          class="ca.uwaterloo.gsd.struts.ui.StrutsModelWizard"
+          hasPages="true"
+          icon="icons/full/obj16/StrutsModelFile.gif"
+          id="ca.uwaterloo.gsd.struts.ui.StrutsModelWizardID"
+          name="%_UI_StrutsModelWizard_label">
+      <description>%_UI_StrutsModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "ca.uwaterloo.gsd.struts.ui.StrutsEditorID"
+        name = "%_UI_StrutsEditor_label"
+        icon = "icons/full/obj16/StrutsModelFile.gif"
+        extensions = "struts"
+        class = "ca.uwaterloo.gsd.struts.ui.StrutsEditor" 
+        contributorClass="ca.uwaterloo.gsd.struts.ui.StrutsActionBarContributor" >
+    </editor>
+  </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="ca.uwaterloo.gsd.fsml.struts.menuContribution2">
+        <menu
+              id="ca.uwaterloo.gsd.struts.menu"
+              label="Struts FSML">
+        </menu>
+     </menuContribution>
+  </extension>    
+</plugin>

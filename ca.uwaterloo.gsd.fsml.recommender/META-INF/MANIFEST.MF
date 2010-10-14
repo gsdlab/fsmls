@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CodeLocationAssist Plug-in
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.recommender;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: ca.uwaterloo.gsd.fsml.recommender.Activator
+Require-Bundle: ca.uwaterloo.gsd.fsml.core,
+ ca.uwaterloo.gsd.fsml.implModel,
+ ca.uwaterloo.gsd.fsml.javaMappingInterpreter,
+ org.eclipse.core.filebuffers
+Bundle-ActivationPolicy: lazy
+Export-Package: ca.uwaterloo.gsd.fsml.recommender

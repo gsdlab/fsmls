@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.5 2007/12/05 16:18:43 Michal Antkiewicz <mantkiew@gsd.uwaterloo.ca> $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http://ca.uwaterloo.gsd/wpi" 
+       class = "ca.uwaterloo.gsd.wpi.provider.WpiItemProviderAdapterFactory"
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://ca.uwaterloo.gsd/wpi"
+       class = "ca.uwaterloo.gsd.wpi.WpiPackage"
+       genModel = "model/wpi.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <parser
+       type="wpi"
+       class="ca.uwaterloo.gsd.wpi.util.WpiResourceFactoryImpl" />
+  </extension>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <wizard
+      id = "ca.uwaterloo.gsd.wpi.presentation.WpiModelWizardID"
+      name = "%_UI_WpiModelWizard_label"
+      class = "ca.uwaterloo.gsd.wpi.presentation.WpiModelWizard"
+      category = "ca.uwaterloo.gsd.fsml.wizardCategory"
+      icon = "icons/full/obj16/WpiModelFile.gif">
+      <description>%_UI_WpiModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "ca.uwaterloo.gsd.wpi.WpiEditorID"
+        name = "%_UI_WpiEditor_label"
+        icon = "icons/full/obj16/WpiModelFile.gif"
+        extensions = "wpi"
+        class = "ca.uwaterloo.gsd.wpi.presentation.WpiEditor" 
+        contributorClass="ca.uwaterloo.gsd.wpi.presentation.WpiActionBarContributor" >
+    </editor>
+  </extension>    
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution locationURI="ca.uwaterloo.gsd.wpi2.menuContribution1">
+     	<menu
+           id="ca.uwaterloo.gsd.wpi.menu"
+           label="WPI FSML"/>
+     </menuContribution>
+  </extension> 
+</plugin>

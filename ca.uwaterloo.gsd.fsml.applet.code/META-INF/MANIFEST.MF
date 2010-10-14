@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Applet FSML Code
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.applet.code;singleton:=true
+Bundle-Version: 0.0.1
+Bundle-Activator: ca.uwaterloo.gsd.applet.code.Activator
+Bundle-Vendor: GSD Lab, University of Waterloo
+Bundle-Localization: plugin
+Require-Bundle: ca.uwaterloo.gsd.fsml.javaMappingInterpreter,
+ ca.uwaterloo.gsd.fsml.applet
+Bundle-ActivationPolicy: lazy
+Export-Package: ca.uwaterloo.gsd.applet.code,
+ ca.uwaterloo.gsd.applet.code.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

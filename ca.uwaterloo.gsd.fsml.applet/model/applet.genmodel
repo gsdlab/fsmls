@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010 Michal Antkiewicz.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      Michal Antkiewicz - initial API and implementation
+-->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.uwaterloo.gsd.fsml.applet/src"
+    editDirectory="/ca.uwaterloo.gsd.fsml.applet/src" editorDirectory="/ca.uwaterloo.gsd.fsml.applet/src"
+    modelPluginID="ca.uwaterloo.gsd.fsml.applet" modelName="Applet" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    usedGenPackages="platform:/plugin/ca.uwaterloo.gsd.fsml.core/model/fsml.genmodel#//fsml">
+  <foreignModel>applet.ecore</foreignModel>
+  <genPackages prefix="Applet" basePackage="ca.uwaterloo.gsd" resource="XMI" disposableProviderFactory="true"
+      multipleEditorPages="false" ecorePackage="applet.ecore#/">
+    <genClasses ecoreClass="applet.ecore#//AppletModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//AppletModel/applets"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//Applet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//Applet/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/extendsApplet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/overridesLifecycleMethods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/showsStatus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/registersMouseListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/registersMouseMotionListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/registersKeyListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/thread"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/singleTaskThread"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Applet/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//Applet/providesParameterInfo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//Applet/providesInfoForParameters"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//OverridesLifecycleMethods">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//OverridesLifecycleMethods/init"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//OverridesLifecycleMethods/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//OverridesLifecycleMethods/paint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//OverridesLifecycleMethods/stop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//OverridesLifecycleMethods/destroy"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//Parameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//ExtendsApplet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//ExtendsApplet/extendsJApplet"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//RegistersMouseListener">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//RegistersMouseListener/this"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//RegistersMouseListener/mouseListenerField"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//RegistersMouseMotionListener">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//RegistersMouseMotionListener/this"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//RegistersMouseMotionListener/mouseMotionListenerField"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//RegistersKeyListener">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//RegistersKeyListener/this"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//RegistersKeyListener/keyListenerField"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//ThisMouseListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//ThisMouseListener/implementsMouseListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//ThisMouseListener/deregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//ThisMouseMotionListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//ThisMouseMotionListener/implementsMouseMotionListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//ThisMouseMotionListener/deregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//ThisKeyListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//ThisKeyListener/implementsKeyListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//ThisKeyListener/deregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//DeregistersThis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//DeregistersThis/this"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//MouseListenerField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//MouseListenerField/listenerField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//MouseListenerField/typedMouseListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//MouseListenerField/deregisters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//MouseListenerField/initialized"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//MouseMotionListenerField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//MouseMotionListenerField/listenerField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//MouseMotionListenerField/typedMouseMotionListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//MouseMotionListenerField/deregisters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//MouseMotionListenerField/initialized"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//KeyListenerField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//KeyListenerField/listenerField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//KeyListenerField/typedKeyListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//KeyListenerField/deregisters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//KeyListenerField/initialized"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//Thread">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//Thread/thread"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//Thread/typedThread"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//Thread/initializesThread"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//Thread/nullifiesThread"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//InitializesThread">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//InitializesThread/initializesThreadWithRunnable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//InitializesThread/initializesWithThreadSubclass"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//InitializesThreadWith">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//InitializesThreadWith/this"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//InitializesThreadWith/helper"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//InitializesThreadWith/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//InitializesThreadWith/runnableField"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//InitializesThreadSubclass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//InitializesThreadSubclass/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//InitializesThreadSubclass/overriddesRun"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//InitializesThreadSubclass/extendsThread"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//ThisRunnable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//ThisRunnable/implementsRunnable"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//RunnableField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//RunnableField/typedRunnable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//RunnableField/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//RunnableField/initialized"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//DeregistersField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//DeregistersField/field"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//ShowsStatus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//ShowsStatus/message"/>
+    </genClasses>
+    <genClasses ecoreClass="applet.ecore#//SingleTaskThread">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute applet.ecore#//SingleTaskThread/runnable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference applet.ecore#//SingleTaskThread/runnableField"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

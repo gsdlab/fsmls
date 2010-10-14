@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="ca.uwaterloo.gsd.fsml.compare.contribution1">
+         <menu
+               label="Compare Models"
+               path="additions"
+               id="ca.uwaterloo.gsd.fsml.compare.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Compare Models"
+               class="ca.uwaterloo.gsd.fsml.compare.popup.actions.CompareModelsAction"
+               menubarPath="ca.uwaterloo.gsd.fsml.compare.menu1/group1"
+               enablesFor="2"
+               id="ca.uwaterloo.gsd.fsml.compare.CompareModelsAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

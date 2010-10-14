@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="FSML Ecore View"
+            icon="icons/FSMLEcoreView.gif"
+            category="ca.uwaterloo.gsd.fsml.viewCategory"
+            class="ca.uwaterloo.gsd.fsml.ecoreview.ui.FSMLEcoreView"
+            id="ca.uwaterloo.gsd.fsml.ecoreview.ui.FSMLEcoreView">
+      </view>
+   </extension>
+	<extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="ca.uwaterloo.gsd.fsml.ecoreview.objectContribution1"
+            objectClass="org.eclipse.emf.ecore.EModelElement">
+         <action
+               class="ca.uwaterloo.gsd.fsml.ecoreview.ui.ShowFSMLEcoreView"
+               enablesFor="1"
+               icon="icons/FSMLEcoreView.gif"
+               id="ca.uwaterloo.gsd.fsml.ecoreview.showFSMLEcoreView"
+               label="Show &amp;FSML Ecore View"
+               menubarPath="ui-actions"/>
+      </objectContribution>
+    </extension>
+</plugin>

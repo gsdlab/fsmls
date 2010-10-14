@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Outline Plug-in
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.outline; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: ca.uwaterloo.gsd.fsml.outline.Activator
+Require-Bundle: org.eclipse.jdt.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.emf.edit.ui,
+ ca.uwaterloo.gsd.fsml.core,
+ org.eclipse.jface.text,
+ org.eclipse.jdt.core,
+ org.eclipse.ui.editors,
+ ca.uwaterloo.gsd.fsml.javaMappingInterpreter
+Bundle-ActivationPolicy: lazy

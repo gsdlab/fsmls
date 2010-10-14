@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010 Herman Lee.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      Herman Lee - initial API and implementation
+-->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.uwaterloo.gsd.fsml.implModel/src"
+    editDirectory="/ca.uwaterloo.gsd.fsml.implModel/src" editorDirectory="/ca.uwaterloo.gsd.fsml.implModel/src"
+    modelPluginID="ca.uwaterloo.gsd.fsml.implModel" modelName="ImplModel" modelPluginClass=""
+    rootImplementsInterface="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>implModel.ecore</foreignModel>
+  <genPackages prefix="ImplModel" basePackage="ca.uwaterloo.gsd.fsml" disposableProviderFactory="true"
+      multipleEditorPages="false" generateModelWizard="false" ecorePackage="implModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="implModel.ecore#//Position">
+      <genEnumLiterals ecoreEnumLiteral="implModel.ecore#//Position/BEFORE"/>
+      <genEnumLiterals ecoreEnumLiteral="implModel.ecore#//Position/AFTER"/>
+    </genEnums>
+    <genClasses ecoreClass="implModel.ecore#//implModel">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference implModel.ecore#//implModel/defaults"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference implModel.ecore#//implModel/variants"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//Default">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//Default/overridden"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="" propertyDescription=""
+          ecoreFeature="ecore:EAttribute implModel.ecore#//Default/eClass"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//Default/eStructuralFeature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="implModel.ecore#//Variant">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//Variant/eClass"/>
+      <genFeatures property="Readonly" createChild="false" propertyDescription=""
+          ecoreFeature="ecore:EAttribute implModel.ecore#//Variant/eStructuralFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//default_assignedWithNew">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference implModel.ecore#//default_assignedWithNew/variant"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//default_assignedWithNull">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference implModel.ecore#//default_assignedWithNull/variant"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//default_extendsClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference implModel.ecore#//default_extendsClass/variant"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//default_implementsInterface">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference implModel.ecore#//default_implementsInterface/variant"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//default_callsReceived">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference implModel.ecore#//default_callsReceived/variant"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//default_methodCalls">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference implModel.ecore#//default_methodCalls/variant"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//default_typedWith">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference implModel.ecore#//default_typedWith/variant"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="implModel.ecore#//variant_assignedWithNew"/>
+    <genClasses image="false" ecoreClass="implModel.ecore#//variant_assignedWithNull"/>
+    <genClasses image="false" ecoreClass="implModel.ecore#//variant_extendsClass"/>
+    <genClasses image="false" ecoreClass="implModel.ecore#//variant_implementsInterface"/>
+    <genClasses image="false" ecoreClass="implModel.ecore#//variant_callsReceived"/>
+    <genClasses image="false" ecoreClass="implModel.ecore#//variant_methodCalls"/>
+    <genClasses image="false" ecoreClass="implModel.ecore#//variant_typedWith"/>
+    <genClasses ecoreClass="implModel.ecore#//variant_assignedWithNew_Initializer">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_assignedWithNew_Initializer/initializedType"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//variant_assignedWithNew_InMethod">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_assignedWithNew_InMethod/methodName"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//variant_extendsClass_Directly"/>
+    <genClasses ecoreClass="implModel.ecore#//variant_extendsClass_Indirectly">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_extendsClass_Indirectly/className"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//variant_implementsInterface_Directly"/>
+    <genClasses ecoreClass="implModel.ecore#//variant_implementsInterface_Indirectly">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_implementsInterface_Indirectly/interfaceName"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//variant_callsReceived_InMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_callsReceived_InMethod/methodName"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//variant_methodCalls_InMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_methodCalls_InMethod/methodName"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//variant_typedWith_Directly"/>
+    <genClasses ecoreClass="implModel.ecore#//variant_typedWith_Indirectly">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_typedWith_Indirectly/className"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//variant_assignedWithNull_Initializer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_assignedWithNull_Initializer/initializedType"/>
+    </genClasses>
+    <genClasses ecoreClass="implModel.ecore#//variant_assignedWithNull_InMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute implModel.ecore#//variant_assignedWithNull_InMethod/methodName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

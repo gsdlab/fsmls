@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: WPI FE Evaluation Plug-in
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.wpi.feEvaluation;singleton:=true
+Bundle-Version: 0.0.1
+Bundle-Activator: ca.uwaterloo.gsd.fsml.wpi.feevaluation.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy

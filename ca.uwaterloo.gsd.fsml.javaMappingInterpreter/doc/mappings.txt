@@ -1,0 +1,148 @@
+#-------------------------------------------------------------------------------
+# Copyright (c) 2010 Michal Antkiewicz.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+# 
+# Contributors:
+#     Michal Antkiewicz - initial API and implementation
+#-------------------------------------------------------------------------------
+CONTEXT_PROJECT = "project";
+	QUERY_PROJECT_NAME = "projectName";
+
+CONTEXT_CLASS = "class";
+	QUERY_CLASS_NAME = "className"; 
+	QUERY_QUALIFIER = "qualifier";
+	QUERY_FULLY_QUALIFIED_NAME = "fullyQualifiedName";
+	QUERY_IS_CLASS = "isClass";
+	QUERY_IS_LOCAL = "isLocal";
+
+	QUERY_IMPLEMENTS_INTERFACE = "implementsInterface"; 
+		[1] DETAIL_NAME = "name";
+	  reverse:	
+		[0..1] DETAIL_CONCRETE = "concrete"; 				[default: false]
+		[0..1] DETAIL_LOCAL = "local";						[default: false]
+		
+	QUERY_EXTENDS_CLASS = "extendsClass";		
+		[1] DETAIL_NAME = "name";
+	  reverse:
+		[0..1] DETAIL_CONCRETE = "concrete"; 				[default: false]
+		[0..1] DETAIL_LOCAL = "local";						[default: false]
+
+	QUERY_METHODS = "methods";					
+		[0..1] DETAIL_NAME = "name";						[default: name of the context class]
+							 { * }
+		[0..1] DETAIL_SIGNATURE = "signature";				[default: ()V]
+	  reverse:	
+		[0..1] DETAIL_INHERITED = "inherited"; 				[default: true]
+
+	QUERY_CALLS_RECEIVED = "callsReceived";
+		[1] DETAIL_CLASS = "class";
+		[1] DETAIL_NAME = "name";
+		[0..1] DETAIL_SIGNATURE = "signature";				[default: ()V]
+	  forward:	
+		[1] DETAIL_LOCATION_NAME = "locationName";
+		[0..1] DETAIL_LOCATION_SIG = "locationSig"; 		[default: ()V]
+		[0..1] DETAIL_POSITION = "position"; 				[default: before]
+								 {before, after}						
+		
+	QUERY_METHOD_CALLS = "methodCalls";
+		[1] DETAIL_CLASS = "class";
+		[1] DETAIL_NAME = "name";
+		[0..1] DETAIL_SIGNATURE = "signature";				[default: ()V]
+		[0..1] DETAIL_RECEIVER = "receiver";
+	  reverse:
+		[0..1] DETAIL_IN = "in";							[default: hierarchy]
+						   {local, hierarchy, super_hierarchy}	
+	  forward:	
+		[1] DETAIL_LOCATION_NAME = "locationName";
+		[0..1] DETAIL_LOCATION_SIG = "locationSig"; 		[default: ()V]
+		[0..1] DETAIL_POSITION = "position"; 				[default: before]
+				{before, after}						
+			
+CONTEXT_METHOD = "method";
+	QUERY_METHOD_NAME = "methodName";
+	QUERY_SIGNATURE = "signature";
+	
+	QUERY_TYPES_OF_RETURNED_OBJECTS = "typesOfReturnedObjects";
+	
+	QUERY_RETURNS_OBJECT_OF_TYPE = "returnsObjectOfType";
+		[1] DETAIL_FEATURE_PATH = "featurePath";
+	
+	QUERY_RETURN_TYPES = "returnTypes";
+
+CONTEXT_FIELD = "field";
+	QUERY_FIELD_NAME = "fieldName";
+	QUERY_FIELD_TYPE = "fieldType";
+	
+	QUERY_TYPED_WITH = "typedWith";
+		[1] DETAIL_NAME = "name";
+	
+	QUERY_ASSIGNED_WITH_NULL = "assignedWithNull";
+	  forward:	
+		[1] DETAIL_LOCATION_NAME = "locationName";
+		[0..1] DETAIL_LOCATION_SIG = "locationSig"; 		[default: ()V]
+		[0..1] DETAIL_POSITION = "position"; 				[default: before]
+				{before, after}
+	
+	QUERY_ASSIGNED_WITH_NEW = "assignedWithNew";
+		[1] DETAIL_CLASS = "class";
+		[0..1] DETAIL_SIGNATURE = "signature";				[default: ()V]
+	  forward:
+	  <1-1>
+		initializer
+			[0..1] DETAIL_INITIALIZER = "initializer";		[default: false]
+		inMethod
+			[0..1] DETAIL_LOCATION_NAME = "locationName";
+			[0..1] DETAIL_LOCATION_SIG = "locationSig"; 	[default: ()V]
+			[0..1] DETAIL_POSITION = "position"; 			[default: before]
+								 {before, after}
+		
+CONTEXT_METHOD_CALL = "methodCall";
+	QUERY_ARGUMENT_VALUE = "argumentValue";
+		[1] DETAIL_INDEX = "index";
+		
+	QUERY_ARGUMENT_NAME = "argumentName";
+		[1] DETAIL_INDEX = "index";		
+
+	QUERY_ARGUMENT_IS_FIELD = "argumentIsField";
+		[1] DETAIL_INDEX = "index";
+		[0..1] DETAIL_SAME_AS = "sameAs";
+		
+	QUERY_ARGUMENT_IS_VARIABLE = "argumentIsVariable";
+		[1] DETAIL_INDEX = "index";
+	  forward:	
+		[1] DETAIL_CLASS = "class";
+		[0..1] DETAIL_SIGNATURE = "signature";				[default: ()V]
+		
+	QUERY_ARGUMENT_IS_NEW = "argumentIsNew";
+		[1] DETAIL_INDEX = "index";
+	  forward:	
+		[1] DETAIL_CLASS = "class";
+		[0..1] DETAIL_SIGNATURE = "signature";				[default: ()V]
+		
+	QUERY_ARGUMENT_IS_THIS = "argumentIsThis";
+		[1] DETAIL_INDEX = "index";
+
+CONTEXT_ANNOTATION = "annotation";
+	QUERY_ATTRIBUTE = "attribute";
+		[0..1] DETAIL_ATTRIBUTE_NAME = "attributeName";		[default: name of the attribute]
+	
+	QUERY_ANNOTATED_WITH = "annotatedWith";
+		[1] DETAIL_FULLY_QUALIFIED_TYPE = "fullyQualifiedType";
+	
+	QUERY_HAS_NO_ATTRIBUTE = "hasNoAttribute";
+	
+
+<no context>
+	QUERY_ARGUMENT = "argument";
+		[1] DETAIL_ARGUMENT = "argument";
+		[1] DETAIL_OF_METHOD_CALL = "ofMethodCall";
+		[1] DETAIL_SAME_AS_ARG = "sameAsArg";
+		[1] DETAIL_OF_CALL = "ofCall";
+		
+	QUERY_METHOD_CALL = "methodCall";
+		[1] DETAIL_CALL = "call";
+		[1] DETAIL_BEFORE = "before";
+		[1] DETAIL_GIVEN_CALLBACK_SEQ = "givenCallbackSeq";

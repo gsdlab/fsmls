@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010 Michal Antkiewicz.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      Michal Antkiewicz - initial API and implementation
+-->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.uwaterloo.gsd.fsml.wpi/src"
+    creationSubmenus="true" editDirectory="/ca.uwaterloo.gsd.fsml.wpi/src" editorDirectory="/ca.uwaterloo.gsd.fsml.wpi/src"
+    modelPluginID="ca.uwaterloo.gsd.fsml.wpi" runtimeJar="true" modelName="Wpi" modelPluginClass=""
+    testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" usedGenPackages="platform:/plugin/ca.uwaterloo.gsd.fsml.core/model/fsml.genmodel#//fsml">
+  <foreignModel>wpi.ecore</foreignModel>
+  <genPackages prefix="Wpi" basePackage="ca.uwaterloo.gsd" resource="XMI" disposableProviderFactory="true"
+      generateExampleClass="false" multipleEditorPages="false" ecorePackage="wpi.ecore#/">
+    <genClasses ecoreClass="wpi.ecore#//WorkbenchPartInteractions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//WorkbenchPartInteractions/project"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//WorkbenchPartInteractions/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//WorkbenchPartInteractions/selectionProviders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//WorkbenchPartInteractions/selectionListeners"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//WorkbenchPartInteractions/partListeners"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//WorkbenchPartInteractions/adapterProviders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//WorkbenchPartInteractions/adapterRequestors"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="wpi.ecore#//Part">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//Part/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//Part/package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//Part/local"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//ViewPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//ViewPart/partId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//ViewPart/implementsIViewPart"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//ImplementsIViewPart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//ImplementsIViewPart/extendsViewPart"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//ExtendsViewPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//ExtendsViewPart/extendsPageBookView"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//EditorPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//EditorPart/partId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//EditorPart/contributor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//EditorPart/implementsIEditorPart"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//Contributor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//Contributor/contributor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//Contributor/extendsEditorActionBarContributor"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//ExtendsEditorActionBarContributor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//ExtendsEditorActionBarContributor/extendsMultiPageEditorActionBarContributor"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//ImplementsIEditorPart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//ImplementsIEditorPart/extendsEditorPart"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//ExtendsEditorPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//ExtendsEditorPart/extendsMultiPageEditorPart"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//SelectionProvider">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference wpi.ecore#//SelectionProvider/provider"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//SelectionProvider/registers"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//RegistersAsSelectionProvider">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAsSelectionProvider/registersThis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//RegistersAsSelectionProvider/registersHelper"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//RegistersAsSelectionProvider/registersVariable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAsSelectionProvider/registersField"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//ThisSelectionProvider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//ThisSelectionProvider/implementsISelectionProvider"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//FieldSelectionProvider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//FieldSelectionProvider/field"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//FieldSelectionProvider/typedISelectionProvider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//FieldSelectionProvider/initialized"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//SelectionListener">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference wpi.ecore#//SelectionListener/listener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//SelectionListener/registersAs"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//RegistersAs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAs/globalSelectionListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAs/globalPostSelectionListener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAs/specificSelectionListener"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//GlobalSelectionListener">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//GlobalSelectionListener/deregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//GlobalPostSelectionListener">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//GlobalPostSelectionListener/deregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//SpecificSelectionListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//SpecificSelectionListener/registrationPartId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference wpi.ecore#//SpecificSelectionListener/provider"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//SpecificSelectionListener/providerName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//SpecificSelectionListener/deregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//DeregistersSamePartId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//DeregistersSamePartId/deregistrationPartId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//DeregistersSamePartId/deregistersSameObject"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//PartListener">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference wpi.ecore#//PartListener/listener"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//PartListener/registersAPartListener"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//RegistersAPartListener">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAPartListener/registers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAPartListener/registers2"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//RegistersAsPartListener">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAsPartListener/deregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//RegistersAsPartListener2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//RegistersAsPartListener2/deregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//Deregisters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//Deregisters/deregistersSameObject"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//DeregistersSameObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//DeregistersSameObject/registersBeforeDeregisters"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//AdapterProvider">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference wpi.ecore#//AdapterProvider/adapterProvider"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//AdapterProvider/providesAdapter"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//ProvidesAdapter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//ProvidesAdapter/adapters"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//AdapterRequestor">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference wpi.ecore#//AdapterRequestor/adapterRequestor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference wpi.ecore#//AdapterRequestor/requestsAdapter"/>
+    </genClasses>
+    <genClasses ecoreClass="wpi.ecore#//RequestsAdapter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute wpi.ecore#//RequestsAdapter/adapter"/>
+      <genFeatures property="Readonly" createChild="false" propertyMultiLine="true"
+          ecoreFeature="ecore:EReference wpi.ecore#//RequestsAdapter/adapterProvider"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

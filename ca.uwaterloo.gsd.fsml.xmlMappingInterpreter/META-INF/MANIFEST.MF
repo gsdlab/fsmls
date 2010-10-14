@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FSML Mapping Interpreter for XML
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.xmlMappingInterpreter
+Bundle-Version: 0.0.1
+Require-Bundle: 
+ ca.uwaterloo.gsd.fsml.core,
+ org.eclipse.wst.sse.core,
+ org.eclipse.wst.xml.core,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime
+Export-Package: ca.uwaterloo.gsd.fsml.xmlMappingInterpreter
+Bundle-Vendor: GSD Lab, University of Waterloo
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

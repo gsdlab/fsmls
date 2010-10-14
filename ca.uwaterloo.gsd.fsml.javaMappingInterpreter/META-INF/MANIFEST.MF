@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FSML Mapping Interpreter for Java
+Bundle-SymbolicName: ca.uwaterloo.gsd.fsml.javaMappingInterpreter;singleton:=true
+Bundle-Version: 0.0.1
+Bundle-Vendor: GSD Lab, University of Waterloo
+Require-Bundle: org.eclipse.jdt.core;visibility:=reexport,
+ org.eclipse.jdt.core.manipulation;visibility:=reexport,
+ org.eclipse.jdt.ui;visibility:=reexport,
+ ca.uwaterloo.gsd.fsml.core,
+ org.eclipse.search,
+ ca.uwaterloo.gsd.fsml.implModel,
+ org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.ltk.core.refactoring,
+ org.eclipse.jface.text
+Export-Package: ca.uwaterloo.gsd.fsml.javaMappingInterpreter,
+ ca.uwaterloo.gsd.fsml.javaMappingInterpreter.analysis,
+ ca.uwaterloo.gsd.fsml.javaMappingInterpreter.analysis.impl,
+ ca.uwaterloo.gsd.fsml.javaMappingInterpreter.mappings
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: ca.uwaterloo.gsd.fsml.javaMappingInterpreter.JavaMappingInterpreterPlugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

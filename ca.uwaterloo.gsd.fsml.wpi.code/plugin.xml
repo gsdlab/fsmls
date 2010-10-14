@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="false"
+            category="ca.uwaterloo.gsd.fsml.wizardCategory"
+            class="ca.uwaterloo.gsd.wpi.code.ui.WPIAnalysisWizard"
+            hasPages="true"
+            icon="icons/WpiModelFile.gif"
+            id="ca.uwaterloo.gsd.wpi2.code.WPIAnalysisWizard"
+            name="Workbench Part Interaction Analysis Wizard">
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+	<extension
+      point="org.eclipse.ui.editorActions">
+   <editorContribution
+         id="ca.uwaterloo.gsd.wpi.code.editorContribution2"
+         targetID="ca.uwaterloo.gsd.wpi.WpiEditorID">
+         <action
+               class="ca.uwaterloo.gsd.wpi.code.ui.WpiModelCodeSynchronizeAction"
+               enablesFor="1"
+               icon="icons/synch_synch.gif"
+               id="ca.uwaterloo.gsd.wpi.code.modelCodeSynchronize"
+               label="Model-Code Synchronize"
+               toolbarPath="ca.uwaterloo.gsd.wpi.menu"
+               tooltip="Computes synchronization states for model elements">
+	         <enablement>
+	            <or>
+	               <objectClass name="ca.uwaterloo.gsd.wpi.Part"/>
+	               <objectClass name="ca.uwaterloo.gsd.wpi.WorkbenchPartInteractions"/>
+	               <objectClass name="ca.uwaterloo.gsd.wpi.Role"/>
+	            </or>
+	         </enablement>
+	         <selection class="ca.uwaterloo.gsd.fsml.fsml.Concept"/>
+	      </action>
+	</editorContribution>
+</extension>
+</plugin>
